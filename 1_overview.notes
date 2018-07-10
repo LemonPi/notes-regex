@@ -3,6 +3,7 @@
 -----------------------------------------------------------
 - regex engine always returns the leftmost match
 	- even if a "better" match could be made later on
+- different implementations of a regex engine are called "flavours"
 - 2 types of engines
 	1. regex directed
 		- walks through regex to try to match next token
