@@ -12,3 +12,15 @@
 		- never backtrack
 		- cannot have lazy quantifiers and backreferences
 
+-----------------------------------------------------------
+    Character Classes
+-----------------------------------------------------------
+- aka character set
+- set of characters to match inside [ ]
+- always matches only a single character
+- can specify ranges
+	- [0-9] matches a digit
+	- can specify multiple ranges
+		- [0-9a-fA-F] matches a single hex digit
+
+
