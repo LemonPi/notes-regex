@@ -44,3 +44,14 @@
 	eg. [0-9]+ matches 837 as well as 222
 	- use backreferences to repeat matched character
 		eg. ([0-9])\1+
+- some flavours allow character class subtraction
+	- supported by
+		- XML Schema
+		- XPath
+		- .NET >= 2.0
+		- JGsoft
+	- [class-[subtract]]
+		eg. [a-z-[aeiou]] matches a single consonant
+			- would have to use [b-df-hj-np-tv-z] without subtraction
+	- can nest substraction within subtracted class...
+	- must always be last element in character class
