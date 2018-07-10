@@ -40,3 +40,7 @@
 			- literal if right after [ or right before ] or right after ^
 	- POSIX and GNU flavours treat \ as literal character
 		- can't escape anything in character classes
+- repeat character classes repeats entire class rather than matched character
+	eg. [0-9]+ matches 837 as well as 222
+	- use backreferences to repeat matched character
+		eg. ([0-9])\1+
