@@ -22,5 +22,6 @@
 	- [0-9] matches a digit
 	- can specify multiple ranges
 		- [0-9a-fA-F] matches a single hex digit
-
-
+- [^ ...] negates character class
+	- also matches invisible line break characters
+	- use negative lookahead to match the absence of a character
