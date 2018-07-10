@@ -59,3 +59,16 @@
 - negation takes precedence over subtraction
 	eg. [^1234-[3456]] is (not 1234) minus 3456
 		- equivalent to [^123456]
+
+-----------------------------------------------------------
+    Intersection
+-----------------------------------------------------------
+- supported by
+	- Java
+	- JGSoft V2
+	- Ruby >= 1.9
+- match a single character that must be present in two sets of characters
+- [class&&[intersect]]
+	- if intersected class does not need negation in Java and Ruby can use [class&&intersect]
+- can be nested/sequenced (since it's commutative)
+- order with negation depends on flavour
