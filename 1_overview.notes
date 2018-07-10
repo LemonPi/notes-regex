@@ -26,3 +26,17 @@
 - [^ ...] negates character class
 	- also matches invisible line break characters
 	- use negative lookahead to match the absence of a character
+- usual metacharacters are not metacharacters inside character classes
+	- unnecessary to \ escape them
+		- would still work, but decreases readability
+	- only metacharacters are
+		- closing bracket ]
+			- literal if right after [ or right after ^
+				- doesn't work in Javascript
+		- backslash \
+		- caret ^
+			- only special if at the front of the character class
+		- hyphen -
+			- literal if right after [ or right before ] or right after ^
+	- POSIX and GNU flavours treat \ as literal character
+		- can't escape anything in character classes
