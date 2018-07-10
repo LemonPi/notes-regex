@@ -1,0 +1,61 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- aka character set
+- set of characters to match inside [ ]
+- always matches only a single character
+- can specify ranges
+	- [0-9] matches a digit
+	- can specify multiple ranges
+		- [0-9a-fA-F] matches a single hex digit
+
+-----------------------------------------------------------
+    Negation
+-----------------------------------------------------------
+- [^ ...] negates character class
+- also matches invisible line break characters
+- use negative lookahead to match the absence of a character
+
+-----------------------------------------------------------
+    Metacharacters
+-----------------------------------------------------------
+- usual metacharacters are not metacharacters inside character classes
+- unnecessary to \ escape them
+	- would still work, but decreases readability
+- only metacharacters are
+	- closing bracket ]
+		- literal if right after [ or right after ^
+			- doesn't work in Javascript
+	- backslash \
+	- caret ^
+		- only special if at the front of the character class
+	- hyphen -
+		- literal if right after [ or right before ] or right after ^
+- POSIX and GNU flavours treat \ as literal character
+	- can't escape anything in character classes
+
+-----------------------------------------------------------
+    Repeat
+-----------------------------------------------------------
+- repeat character classes repeats entire class rather than matched character
+	eg. [0-9]+ matches 837 as well as 222
+	- use backreferences to repeat matched character
+		eg. ([0-9])\1+
+
+-----------------------------------------------------------
+    Subtraction
+-----------------------------------------------------------
+- some flavours allow character class subtraction
+- supported by
+	- XML Schema
+	- XPath
+	- .NET >= 2.0
+	- JGsoft
+- [class-[subtract]]
+	eg. [a-z-[aeiou]] matches a single consonant
+		- would have to use [b-df-hj-np-tv-z] without subtraction
+- can nest substraction within subtracted class...
+- must always be last element in character class
+- negation takes precedence over subtraction
+	eg. [^1234-[3456]] is (not 1234) minus 3456
+		- equivalent to [^123456]
