@@ -1,0 +1,14 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- regex engine always returns the leftmost match
+	- even if a "better" match could be made later on
+- 2 types of engines
+	1. regex directed
+		- walks through regex to try to match next token
+		- if token fails to match, backtrack to previous position in regex and string to try a different path
+	2. text directed
+		- walks through string and try all permutations of regex before moving on to next string
+		- never backtrack
+		- cannot have lazy quantifiers and backreferences
+
