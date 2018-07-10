@@ -55,3 +55,6 @@
 			- would have to use [b-df-hj-np-tv-z] without subtraction
 	- can nest substraction within subtracted class...
 	- must always be last element in character class
+	- negation takes precedence over subtraction
+		eg. [^1234-[3456]] is (not 1234) minus 3456
+			- equivalent to [^123456]
