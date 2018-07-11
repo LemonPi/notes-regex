@@ -57,3 +57,18 @@ eg. (\1two|(one))+
 - (?<name>group) or (?'name'group) and refer with \k<name> or \k'name'
 - mixing named and numbered groups is not recommended
 	- inconsistent group numbering
+
+-----------------------------------------------------------
+    Branch reset groups
+-----------------------------------------------------------
+- groups in alternatives are not shared by default
+	eg. (a)|(b)|(c) has 3 capture groups
+		- \1 holds a or nothing
+		- \2 holds b or nothing
+		- \3 holds c or nothing
+- wrap in a non-capturing (?|regex) to share groups
+	eg. (?|(a)|(b)|(c))
+- alternatives don't have to have the same number of groups
+	eg. (?|abc|(d)(e)(f)|g(h)i)
+- capturing groups after a branch reset group continues numbering from highest possible alternative
+	eg. after (?|abc|(d)(e)(f)|g(h)i) numbering starts at \4 regardless of which group was matched
