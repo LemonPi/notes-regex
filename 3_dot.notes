@@ -1,0 +1,19 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- matches any single character except line break characters
+	- mostly historical
+		- first tools were line based so never had to match line breaks
+	- flavours except Javascript and VBScript can be configured to also match line breaks
+- in most cases better to use a negated character class
+
+-----------------------------------------------------------
+    Line break characters
+-----------------------------------------------------------
+- different flavours treat different characters as line breaks
+- \n is universally treated
+	- not a problem on windows 
+		- scripting languages read/write files in text mode
+		- \r\n read as \n
+		- \n written to as \r\n
+		- always just \n in memory
