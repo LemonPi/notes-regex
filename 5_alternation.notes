@@ -1,0 +1,13 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- match one expression of several possible
+	- like character classes, but for expressions
+- has lowest precedence of all operators
+- limit reach of alternation by parenthesis
+	eg. \b(cat|dog)\b instead of \bcat|dog\b
+- order of alternatives matter because the engine is eager
+	- attempt from left to right
+- text-directed engines returns the longest match
+- POSIX requires the longest match to be returned
+	- damages performance of regex-directed engines since they cannot be eager
