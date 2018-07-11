@@ -8,5 +8,16 @@
 - is greedy
 	- always try to match first
 	eg. Feb 23(rd)? for "Today is Feb 23rd, 2003" will match Feb 23rd and not Feb 23
-- make lazy by putting another question mark after
 
+-----------------------------------------------------------
+    Repetition
+-----------------------------------------------------------
+- + is 1 or more = {0,}
+- * is 0 or more = {0,}
+- {n} means to match exactly n times
+- all reptition operators are greedy
+	- will actually match to end of string then backtrack
+- make lazy by putting question mark after
+	eg. ?? +? *? {1,5}?
+	- has to backtrack for each character trying to repeat
+- using negated character class is better than laziness because of not backtracking
