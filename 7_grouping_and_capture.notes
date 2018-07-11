@@ -1,0 +1,7 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- can only group with ()
+- allows quantifiers and alternation to be applied to group
+- () also creates a numbered capturing group
+- make group non-capture with (?:group) at the front
