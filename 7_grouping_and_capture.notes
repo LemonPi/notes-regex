@@ -5,3 +5,17 @@
 - allows quantifiers and alternation to be applied to group
 - () also creates a numbered capturing group
 - make group non-capture with (?:group) at the front
+
+-----------------------------------------------------------
+    Backreferences
+-----------------------------------------------------------
+- reference to captured groups
+- refer to first group with \1
+- numbered from the left-to-right order of open parenthesis (
+	- ignore ( as part of non-cpaturing groups
+- most flavours support up to 99 capturing groups with \99
+- backreferences are not substituted permanently
+	- uses the last match saved
+	eg. ([abc])+ matching cab will store c in \1
+		- first stores a in \1 then b then c
+- can't be used inside character classes
