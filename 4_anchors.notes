@@ -1,0 +1,24 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- match a position relative to characters instead of characters themselves
+- ^ matches position before first character
+- $ matches position after last character
+- regex with only anchors can only find 0-length matches
+
+-----------------------------------------------------------
+    Multilines
+-----------------------------------------------------------
+- ^ also matches the position after each line break (similarly for $)
+- in some flavours this has to be explicitly activated as "multiline mode"
+
+-----------------------------------------------------------
+    True start and end
+-----------------------------------------------------------
+- \A matches start of string
+- \Z matches end of string
+- not supported by
+	- Javascript
+	- POSIX
+	- XML
+	- XPath
