@@ -34,3 +34,17 @@
 		- \1 references a group that failed to match
 			- no ? making \1 optional so overall match fails
 			- in Javascript and XPath the \1 here must also match nothing so works
+
+-----------------------------------------------------------
+    Forward references
+-----------------------------------------------------------
+- many flavours allow groups to appear later in regex than reference
+- only useful inside a repeated group
+eg. (\2two|(one))+ always fails to match first alternation in the first try since \2 is not captured
+
+-----------------------------------------------------------
+    Nested references
+-----------------------------------------------------------
+- some flavours self reference 
+- only useful inside a repeated group
+eg. (\1two|(one))+
