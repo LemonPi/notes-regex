@@ -1,0 +1,12 @@
+-----------------------------------------------------------
+    Optional
+-----------------------------------------------------------
+- ? means 0 or 1 of the previous token
+- make several tokens optional by grouping with parenthesis
+	eg. Nov(ember)?
+- equivalent to {0,1}
+- is greedy
+	- always try to match first
+	eg. Feb 23(rd)? for "Today is Feb 23rd, 2003" will match Feb 23rd and not Feb 23
+- make lazy by putting another question mark after
+
