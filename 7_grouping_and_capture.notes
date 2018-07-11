@@ -48,3 +48,12 @@ eg. (\2two|(one))+ always fails to match first alternation in the first try sinc
 - some flavours self reference 
 - only useful inside a repeated group
 eg. (\1two|(one))+
+
+-----------------------------------------------------------
+    Named capturing groups
+-----------------------------------------------------------
+- implemented differently in different flavours
+- (?P<name>group) and refer with (?P=name) for python
+- (?<name>group) or (?'name'group) and refer with \k<name> or \k'name'
+- mixing named and numbered groups is not recommended
+	- inconsistent group numbering
