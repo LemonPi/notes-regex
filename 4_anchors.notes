@@ -5,6 +5,12 @@
 - ^ matches position before first character
 - $ matches position after last character
 - regex with only anchors can only find 0-length matches
+- \b matches a word boundary position
+	- 3 possible positions qualifying as word boundaries
+		1. before the first character in string if it's a word character
+		2. after the last character in string if it's a word character
+		3. between two characters in string where one is a word character and the other is not
+	- \B negates it
 
 -----------------------------------------------------------
     Multilines
