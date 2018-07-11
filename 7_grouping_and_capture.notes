@@ -19,3 +19,18 @@
 	eg. ([abc])+ matching cab will store c in \1
 		- first stores a in \1 then b then c
 - can't be used inside character classes
+
+-----------------------------------------------------------
+    Backreference to failed groups
+-----------------------------------------------------------
+- matching nothing is different than not matching
+	eg. (q?)b\1 will match b
+		- q? is optional and matches nothing
+		- b matches b
+		- \1 matches the nothing captured
+	eg. (q)?b\1 will not match b in most flavours
+		- (q) fails to match so \1 is not captured
+		- b matches b
+		- \1 references a group that failed to match
+			- no ? making \1 optional so overall match fails
+			- in Javascript and XPath the \1 here must also match nothing so works
