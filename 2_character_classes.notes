@@ -72,3 +72,18 @@
 	- if intersected class does not need negation in Java and Ruby can use [class&&intersect]
 - can be nested/sequenced (since it's commutative)
 - order with negation depends on flavour
+
+-----------------------------------------------------------
+    Shorthands
+-----------------------------------------------------------
+- \d = [0-9]
+	- most flavours supporting Unicode also includes digits from all scripts
+- \w = [A-Za-z0-9_]
+	- somewhat surprisingly includes \d
+- \s = [ \t\r\n\f]
+- can be used anywhere
+	- includes inside character classes
+- negate by capitalizing
+	eg. \W = [^\w]
+	- be careful with negating in square brackets
+		eg. [\D\S] /= [^\d\s]
