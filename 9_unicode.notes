@@ -35,3 +35,16 @@
 - \p{S} symbols
 - \p{N} number
 - \p{P} punctuation
+
+-----------------------------------------------------------
+    Scripts
+-----------------------------------------------------------
+- scripts are groups of code points used by a particular writing system
+- each code point belongs to exactly 1 script
+- some scripts span multiple languages
+	eg. \p{Latin}
+- some languages span multiple scripts
+	eg. \p{Hiragana}, \p{Katakana}, \p{Han}, \p{Latin}
+- \p{Common} or \p{Cn} matches those not assigned to another script
+- some flavours allow \p{IsScript} instead of \p{Script}
+	- better distinguishes it from blocks
