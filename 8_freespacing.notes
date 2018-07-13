@@ -1,0 +1,15 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- mode to improve readability
+- allow any number of spaces between tokens
+	- \d is a single token
+	- a character class is a single token
+- for flavours supporting mode modifiers can put (?x) at start to start free-space mode
+
+-----------------------------------------------------------
+    Comments
+-----------------------------------------------------------
+- start comment with # until end of line
+	- not supported by XPath and Oracle
+- comments without free-space with (?#comment)
