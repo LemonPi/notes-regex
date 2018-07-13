@@ -1,0 +1,19 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- can be specified outside the regex
+	- flags to regex constructor
+	- toggle buttons/checkboxes
+- alternatively specify at top of regex in (?options...)
+	- options are concatenated
+- i case insensitive
+- x free-spacing mode
+- s single line mode
+	- dot matches line breaks
+- m multi line mode
+	- not exclusive with single line mode
+	- caret and dollar match start and end of each line in subject string
+- n turns all unnamed groups into non-capturing groups
+- U reverses greedy/lazy quantifiers
+- X makes escaping letters with backslash an error if it's not a valid token
+	- only supported by PCRE
