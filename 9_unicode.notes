@@ -20,3 +20,18 @@
 		- 4 hex digits in FFFF
 	- \x{FFFF}
 		- for Perl, PCRE, Boost, std::regex
+
+-----------------------------------------------------------
+    Categories
+-----------------------------------------------------------
+- \p{X} to match mategory X
+	- \P{X} to negate
+- \p{L} letter category
+	eg. \p{L} matches letter a
+	- \p{Ll} lowercase of anything with an uppercase
+	- \p{Lu} uppercase of anything with a lowercase
+- \p{M} mark category
+- \p{Z} any kind of separator
+- \p{S} symbols
+- \p{N} number
+- \p{P} punctuation
