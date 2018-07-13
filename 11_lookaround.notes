@@ -1,0 +1,16 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- 0 length assertions
+	- assertions because they return only whether they matched or not
+	- do not consume characters
+
+-----------------------------------------------------------
+    Lookahead
+-----------------------------------------------------------
+- match something (not)followed by something
+- (?!regex) to match the absence of regex
+- (?=regex) to match something followed by regex
+- can use any regex inside lookahead
+	- but not in lookbehind
+eg. q(?!u) matches q not followed by u
