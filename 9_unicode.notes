@@ -1,0 +1,22 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- pretty much have to support unicode now
+- most engines treat any single Unicode <code point> as a single character
+	eg. à is 2 code points: U+0061 (a) followed by U+0300 (grave accent)
+		- . will only match a
+		- but also it can be encoded as U+00E0 (a with grave accent)
+			- existence is due to historical character sets
+- any non-combining mark code point can be followed by any number of combining marks
+	- U+0300 is a combining mark
+	- results in a single <grapheme>
+- match a single grapheme with \X
+	- unicode version of dot
+	- always matches line break characters though
+	- works in Perl, PCRE, PHP, Boost, Ruby 2.0, JGS
+	- other flavours need \P{M}\p{M}*+
+- match a specific code point
+	- \uFFFF
+		- 4 hex digits in FFFF
+	- \x{FFFF}
+		- for Perl, PCRE, Boost, std::regex
