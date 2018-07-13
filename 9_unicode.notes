@@ -57,3 +57,11 @@
 		- reserved for future expansion
 - if unsure, use script instead of block
 - syntax is \p{InBlock}
+
+-----------------------------------------------------------
+    Normalization
+-----------------------------------------------------------
+- normalize subject and regex before matching to avoid inconsistencies
+	- libraries supply string normalization methods
+- in Java can use CANON_EQ to allow matching between equivalent encoded characters
+	eg. multiple ways of encoding à are matched
