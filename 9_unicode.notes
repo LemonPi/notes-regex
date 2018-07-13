@@ -48,3 +48,12 @@
 - \p{Common} or \p{Cn} matches those not assigned to another script
 - some flavours allow \p{IsScript} instead of \p{Script}
 	- better distinguishes it from blocks
+
+-----------------------------------------------------------
+    Blocks
+-----------------------------------------------------------
+- similar to scripts, but is a continuous range of code points
+	- will include unassigned code points
+		- reserved for future expansion
+- if unsure, use script instead of block
+- syntax is \p{InBlock}
