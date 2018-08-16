@@ -24,3 +24,22 @@ eg. q(?!u) matches q not followed by u
 		3. lookahead is successful but the match is discarded and the engine doesn't advance from u to i in the text
 		4. regex advances to i but the text is at u so the match fails
 		5. all remaining attempts fail due to lack of q in text
+
+-----------------------------------------------------------
+    Lookbehind
+-----------------------------------------------------------
+- (?<!regex) negative
+- (?<=regex) positive
+- can use anywhere in regex, not just start
+	eg. \w+(?<!s)\b matches word not ending in s
+		- not equivalent to \w+[^s]\b
+			- doesn't match single letter words
+			- last character can be non \w
+		- equivalent to \w*[^s\W]\b
+- if placed in front of a literal, is evaluated at each step instead of literal
+	eg. (?<=a)b match against thingamabob
+		- for each character, step back 1 and test against a
+			- not testing each character against b, then for all of those that match look at 1 before
+		- don't put very expensive regex in these
+- limited to fixed length strings in lookbehind
+	- can't apply regex backwards so needs to figure out how many characteres to step back
