@@ -1,0 +1,10 @@
+-----------------------------------------------------------
+    Conditional
+-----------------------------------------------------------
+- (?ifthen|else) syntax
+- if construct can be a lookaround or a number indicating a capturing group
+	- test whether the capturing group took part in match so far
+	eg. (a)?b(?(1)c|d) tests whether a was matched
+- anything can be in then and else
+- only use if you have to use one regex
+	- better to build branching logic into calling code if available
