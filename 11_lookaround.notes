@@ -43,6 +43,19 @@ eg. q(?!u) matches q not followed by u
 		- don't put very expensive regex in these
 - limited to fixed length strings in lookbehind
 	- can't apply regex backwards so needs to figure out how many characteres to step back
+	- for some flavours, can use \K in place of lookbehind to keep text matched out of overall regex match
+		eg. h\Kd matches only the second d in adhd
+		- can be used anywhere
+		- avoid using in lookbehind
+		- can use multiple instances of it
+		- doesn't affect capture groups
+			- ignored prefix is present in captured group
+		- limitation is that it doesn't actually go backwards like lookbehind
+			eg. a\Ka matching aaaa gives 2 matches (2nd and 4th)
+				- (?<=a)a matching aaaa gives 3 matches (2nd, 3rd, and 4th)
+				- 3rd a is effectively consumed by a\K
+			- only a problem if the regex before \K can match the same text as regex after \K
+			- another limitation is there is only positive \K (no substitute for negative lookbehind)
 
 -----------------------------------------------------------
     Use as filter
