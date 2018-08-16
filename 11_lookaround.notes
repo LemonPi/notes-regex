@@ -14,3 +14,13 @@
 - can use any regex inside lookahead
 	- but not in lookbehind
 eg. q(?!u) matches q not followed by u
+- can have capturing groups inside and can be used in backreference
+	- (?=(regex)) order of parentheses
+		- ((?=regex)) won't work because lookahead will have discarded the match by group capture store time
+- another reminder that lookaround doesn't consume any characters!
+	eg. q(?=u)i matched against quit
+		1. q matches q
+		2. u in lookahead matches with u
+		3. lookahead is successful but the match is discarded and the engine doesn't advance from u to i in the text
+		4. regex advances to i but the text is at u so the match fails
+		5. all remaining attempts fail due to lack of q in text
