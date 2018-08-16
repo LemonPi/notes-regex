@@ -43,3 +43,12 @@ eg. q(?!u) matches q not followed by u
 		- don't put very expensive regex in these
 - limited to fixed length strings in lookbehind
 	- can't apply regex backwards so needs to figure out how many characteres to step back
+
+-----------------------------------------------------------
+    Use as filter
+-----------------------------------------------------------
+- the fact lookaround doesn't consume it's match makes it suitable as a filter
+	eg. (?=\b\w{6}\b)\b\w*cat\w* matches any 6 character word containing cat
+	- much easier to express complex conditions
+	- after match, still at beginning of string fulfilling condition
+	- can optomize to (?=\b\w{6}\b)\b\w{0,3}cat\w*
